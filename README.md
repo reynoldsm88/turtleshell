@@ -1,3 +1,3 @@
-# ruc-dev
+# turtleshell
 
 Development Environment for RUC Courses.
