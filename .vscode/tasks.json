@@ -1,0 +1,52 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "docker-build",
+            "dockerBuild": {
+                "context": "${workspaceFolder}",
+                "tag": "local/turtleshell:latest",
+                "dockerfile": "Dockerfile"
+            },
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "run-windows",
+            "type": "docker-run",
+            "dockerRun": {
+                "containerName": "turtleshell",
+                "image": "local/turtleshell:latest",
+                "command": "bash",
+                "volumes": [
+                    {
+                        "localPath": "%USERPROFILE%/.ssh",
+                        "containerPath": "/tmp/.ssh"
+                    }
+                ]
+            },
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "run",
+            "type": "docker-run",
+            "dockerRun": {
+                "containerName": "turtleshell",
+                "image": "local/turtleshell:latest",
+                "command": "bash",
+                "volumes": [
+                    {
+                        "localPath": "$HOME/.ssh",
+                        "containerPath": "/tmp/.ssh"
+                    }
+                ]
+            },
+            "problemMatcher": [],
+            "group": "build"
+        },
+    ]
+}
