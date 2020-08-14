@@ -25,6 +25,10 @@
                     {
                         "localPath": "%USERPROFILE%/.ssh",
                         "containerPath": "/tmp/.ssh"
+                    },
+                    {
+                        "localPath": "%USERPROFILE%/GitHub",
+                        "containerPath": "/root/home/GitHub"
                     }
                 ]
             },
@@ -42,6 +46,10 @@
                     {
                         "localPath": "$HOME/.ssh",
                         "containerPath": "/tmp/.ssh"
+                    },
+                    {
+                        "localPath": "$HOME/GitHub",
+                        "containerPath": "/root/home/GitHub"
                     }
                 ]
             },

@@ -12,6 +12,9 @@ RUN apt-get update && apt-get upgrade -y && \
 
 RUN python3.8 -m pip install bokeh contest PyGithub
 
+RUN curl -L https://github.com/cli/cli/releases/download/v0.11.1/gh_0.11.1_linux_amd64.deb -o gh_latest.deb && \
+    apt-get install ./gh_latest.deb
+
 RUN ln -s /usr/bin/python3.8 /usr/bin/python
 RUN ln -s /usr/bin/python3.8-config /usr/bin/python-config
 
