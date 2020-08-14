@@ -27,8 +27,8 @@
                         "containerPath": "/tmp/.ssh"
                     },
                     {
-                        "localPath": "%USERPROFILE%/GitHub",
-                        "containerPath": "/root/home/GitHub"
+                        "localPath": "%USERPROFILE%/turtleshell",
+                        "containerPath": "/root/home/turtleshell"
                     }
                 ]
             },
@@ -48,8 +48,8 @@
                         "containerPath": "/tmp/.ssh"
                     },
                     {
-                        "localPath": "$HOME/GitHub",
-                        "containerPath": "/root/home/GitHub"
+                        "localPath": "$HOME/turtleshell",
+                        "containerPath": "/root/home/turtleshell"
                     }
                 ]
             },
