@@ -19,7 +19,7 @@
             "type": "docker-run",
             "dockerRun": {
                 "containerName": "turtleshell",
-                "image": "local/turtleshell:latest",
+                "image": "lnk2past/turtleshell:latest",
                 "command": "bash",
                 "volumes": [
                     {
@@ -40,7 +40,7 @@
             "type": "docker-run",
             "dockerRun": {
                 "containerName": "turtleshell",
-                "image": "local/turtleshell:latest",
+                "image": "lnk2past/turtleshell:latest",
                 "command": "bash",
                 "volumes": [
                     {
