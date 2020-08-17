@@ -4,18 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
-            "type": "docker-build",
-            "dockerBuild": {
-                "context": "${workspaceFolder}",
-                "tag": "local/turtleshell:latest",
-                "dockerfile": "Dockerfile"
-            },
-            "problemMatcher": [],
-            "group": "build"
-        },
-        {
-            "label": "run-windows",
+            "label": "turtleshell-run-windows",
             "type": "docker-run",
             "dockerRun": {
                 "containerName": "turtleshell",
@@ -36,7 +25,7 @@
             "group": "build"
         },
         {
-            "label": "run",
+            "label": "turtleshell-run",
             "type": "docker-run",
             "dockerRun": {
                 "containerName": "turtleshell",
