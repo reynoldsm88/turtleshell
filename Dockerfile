@@ -7,13 +7,21 @@ LABEL "maintainer"="Lnk2past <Lnk2past@gmail.com>"
 RUN echo "deb http://http.us.debian.org/debian/ testing non-free contrib main" >> /etc/apt/sources.list
 
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y curl git make gcc-10 g++-10 python3.8 python3.8-dev python3-pip \
+    apt-get install -y vim curl git make cmake gcc-10 g++-10 python3.8 python3.8-dev python3-pip \
     libjpeg-dev zlib1g-dev libssl-dev libncurses5-dev libgdbm-dev libnss3-dev libsqlite3-dev libreadline-dev libffi-dev libbz2-dev
 
 RUN python3.8 -m pip install bokeh contest PyGithub
 
 RUN curl -L https://github.com/cli/cli/releases/download/v0.11.1/gh_0.11.1_linux_amd64.deb -o gh_latest.deb && \
     apt-get install ./gh_latest.deb
+
+RUN curl -L https://github.com/fmtlib/fmt/archive/7.0.3.tar.gz -o fmt_latest.tar.gz && \
+    tar xfvz fmt_latest.tar.gz && \
+    cp -R fmt-7.0.3/include/fmt /usr/include && \
+    rm -rf fmt_latest.tar.gz fmt-7.0.3
+
+RUN mkdir -p /usr/include/nlohmann && cd /usr/include/nlohmann && \
+    curl -L https://github.com/nlohmann/json/releases/download/v3.9.1/json.hpp -o json.hpp
 
 RUN ln -s /usr/bin/python3.8 /usr/bin/python
 RUN ln -s /usr/bin/python3.8-config /usr/bin/python-config
