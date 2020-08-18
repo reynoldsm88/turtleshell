@@ -29,7 +29,7 @@ RUN curl -L https://github.com/Lnk2past/malen/archive/v2020.8.1.tar.gz -o malen_
     cp -R malen-2020.8.1/include/malen /usr/include && \
     rm -rf malen_latest.tar.gz malen-2020.8.1
 
-RUN pip install git+https://github.com/Lnk2past/malen-bokeh.git && \
+RUN pip install git+https://github.com/Lnk2past/malen-bokeh.git@v2020.8.1 && \
     cp -R /usr/local/include/python3.8/malen.bokeh/include/malen /usr/include/
 
 RUN ln -s /usr/bin/python3.8 /usr/bin/python
