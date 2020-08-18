@@ -13,7 +13,8 @@ RUN apt-get update && apt-get upgrade -y && \
 RUN python3.8 -m pip install bokeh contest PyGithub
 
 RUN curl -L https://github.com/cli/cli/releases/download/v0.11.1/gh_0.11.1_linux_amd64.deb -o gh_latest.deb && \
-    apt-get install ./gh_latest.deb
+    apt-get install ./gh_latest.deb && \
+    rm -rf gh_latest.deb
 
 RUN curl -L https://github.com/fmtlib/fmt/archive/7.0.3.tar.gz -o fmt_latest.tar.gz && \
     tar xfvz fmt_latest.tar.gz && \
@@ -22,6 +23,14 @@ RUN curl -L https://github.com/fmtlib/fmt/archive/7.0.3.tar.gz -o fmt_latest.tar
 
 RUN mkdir -p /usr/include/nlohmann && cd /usr/include/nlohmann && \
     curl -L https://github.com/nlohmann/json/releases/download/v3.9.1/json.hpp -o json.hpp
+
+RUN curl -L https://github.com/Lnk2past/malen/archive/v2020.8.1.tar.gz -o malen_latest.tar.gz && \
+    tar xfvz malen_latest.tar.gz && \
+    cp -R malen-2020.8.1/include/malen /usr/include && \
+    rm -rf malen_latest.tar.gz malen-2020.8.1
+
+RUN pip install git+https://github.com/Lnk2past/malen-bokeh.git && \
+    cp -R /usr/local/include/python3.8/malen.bokeh/include/malen /usr/include/
 
 RUN ln -s /usr/bin/python3.8 /usr/bin/python
 RUN ln -s /usr/bin/python3.8-config /usr/bin/python-config
