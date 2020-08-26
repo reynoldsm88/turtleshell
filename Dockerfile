@@ -10,7 +10,8 @@ RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y vim curl git make cmake gcc-10 g++-10 python3.8 python3.8-dev python3-pip \
     libjpeg-dev zlib1g-dev libssl-dev libncurses5-dev libgdbm-dev libnss3-dev libsqlite3-dev libreadline-dev libffi-dev libbz2-dev
 
-RUN python3.8 -m pip install bokeh contest PyGithub
+COPY requirements.txt /requirements.txt
+RUN python3.8 -m pip install -r requirements.txt
 
 RUN curl -L https://github.com/cli/cli/releases/download/v0.11.1/gh_0.11.1_linux_amd64.deb -o gh_latest.deb && \
     apt-get install ./gh_latest.deb && \

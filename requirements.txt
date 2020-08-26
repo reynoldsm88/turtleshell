@@ -1,0 +1,11 @@
+bokeh
+contest
+ipython
+jupyter
+matplotlib
+numpy
+pandas
+pygithub
+pyyaml
+scipy
+seaborn
