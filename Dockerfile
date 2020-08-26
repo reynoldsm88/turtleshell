@@ -37,6 +37,8 @@ RUN ln -s /usr/bin/python3.8 /usr/bin/python
 RUN ln -s /usr/bin/python3.8-config /usr/bin/python-config
 RUN ln -s /usr/lib/python3.8/config-3.8-x86_64-linux-gnu/libpython3.8.so /usr/lib/python3.8/config-3.8-x86_64-linux-gnu/libpython.so
 
+COPY .vimrc /root/.vimrc
+
 COPY docker-entrypoint.sh /bin/docker-entrypoint.sh
 RUN chmod +x /bin/docker-entrypoint.sh
 ENTRYPOINT ["/bin/docker-entrypoint.sh"]
