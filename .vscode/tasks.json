@@ -18,6 +18,10 @@
                     {
                         "localPath": "%USERPROFILE%/turtleshell",
                         "containerPath": "/root/home/turtleshell"
+                    },
+                    {
+                        "localPath": "%USERPROFILE%/.gitconfig",
+                        "containerPath": "/root/.gitconfig"
                     }
                 ]
             },
@@ -39,6 +43,10 @@
                     {
                         "localPath": "$HOME/turtleshell",
                         "containerPath": "/root/home/turtleshell"
+                    },
+                    {
+                        "localPath": "$HOME/.gitconfig",
+                        "containerPath": "/root/.gitconfig"
                     }
                 ]
             },
